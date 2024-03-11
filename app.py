@@ -1,3 +1,4 @@
+!conda install contractions
 # Import some required libraries
 import pandas as pd
 import numpy as np
