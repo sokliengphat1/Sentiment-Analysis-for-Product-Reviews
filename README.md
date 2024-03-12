@@ -42,7 +42,6 @@ To run the code in this project, you will need the following libraries:
 - streamlit 
 - scipy
 - joblib
-- scikit-learn
 
 Additionally, if you're using spaCy, you'll need to download the English language model:
 - python -m spacy download en_core_web_sm
