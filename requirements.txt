@@ -5,6 +5,7 @@
  textblob
  scipy
  joblib
+ sklearn
 
 # SpaCy English language model
  spacy==3.5.0
