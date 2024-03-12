@@ -1,0 +1,7 @@
+contractions
+nrclex
+textblob
+scipy
+spacy
+streamlit
+joblib
