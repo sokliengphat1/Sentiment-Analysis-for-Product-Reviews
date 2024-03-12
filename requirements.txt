@@ -4,9 +4,9 @@
  nrclex
  textblob
  scipy
- spacy==3.0.0
  joblib
 
 # SpaCy English language model
- en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0-py3-none-any.whl
+ spacy==3.5.0
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0-py3-none-any.whl
  

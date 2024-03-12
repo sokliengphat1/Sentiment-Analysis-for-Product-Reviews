@@ -7,8 +7,6 @@ from collections import Counter
 import contractions
 from nrclex import NRCLex
 from textblob import TextBlob
-from scipy.sparse import hstack
-from scipy.sparse import csr_matrix
 
 # Spacy
 import spacy
@@ -16,8 +14,7 @@ import spacy
 nlp = spacy.load('en_core_web_sm')
 
 import streamlit as st
-import pandas as pd
-from scipy.sparse import csr_matrix, hstack
+=from scipy.sparse import csr_matrix, hstack
 import joblib
 
 # Load necessary objects
