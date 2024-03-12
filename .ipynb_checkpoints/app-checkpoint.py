@@ -6,6 +6,7 @@ import contractions
 from nrclex import NRCLex
 from textblob import TextBlob
 import nltk
+import io
 
 # Download the necessary corpus data
 nltk.download('punkt')
@@ -176,12 +177,51 @@ def predict_sentiment(cleaned_text):
 # Streamlit web app
 def main():
     st.title("Sentiment Analysis")
+
+    # Section for text input
+    st.header("Single Text Input")
     input_text = st.text_input("Enter your text:")
-    if st.button("Analyze"):
+    if st.button("Analyze Single Text"):
         if input_text:
             cleaned_text = text_preprocessing(input_text)
             predicted_sentiment = predict_sentiment(cleaned_text)
             st.write("Predicted sentiment:", predicted_sentiment)
 
+    # Section for file upload
+    st.header("File Upload")
+    uploaded_file = st.file_uploader("Upload a .txt file", type=["txt"])
+    if uploaded_file:
+        # Read the uploaded file
+        file_contents = uploaded_file.getvalue().decode("utf-8")
+        
+        # Split the file contents into individual reviews
+        reviews = file_contents.split('\n')
+
+        # Apply sentiment analysis to each review
+        results = []
+        for review in reviews:
+            cleaned_review = text_preprocessing(review)
+            predicted_sentiment = predict_sentiment(cleaned_review)
+            results.append((review, predicted_sentiment))
+
+        # Create DataFrame from results
+        result_df = pd.DataFrame(results, columns=["Review Text", "Predicted Label"])
+
+        # Save results as CSV
+        result_csv = result_df.to_csv(index=False)
+
+        # Display head of the CSV file
+        st.write("Head of the result CSV file:")
+        st.write(result_df.head(10))
+
+        # Offer to download the CSV file
+        st.download_button(
+            label="Download CSV",
+            data=result_csv,
+            file_name="sentiment_analysis_results.csv",
+            mime="text/csv",
+        )
+
 if __name__ == "__main__":
     main()
+

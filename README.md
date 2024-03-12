@@ -8,10 +8,11 @@ The project directory contains code and data for sentiment analysis. Below is th
 
 #### Datasets/
 
-- **negative-reviews.txt**: Contains a collection of negative reviews.
-- **positive-reviews.txt**: Contains a collection of positive reviews.
-- **positive-words**: Possibly a file containing a list of positive words used for sentiment analysis.
-- **negative-words**: Possibly a file containing a list of negative words used for sentiment analysis.
+- **negative-reviews.txt**: Contains 20,000 lines of reviews (one review per line) considered to be negative reviews.
+- **positive-reviews.txt**: Contains 20,000 lines of reviews (one review per line) considered to be positive reviews.
+- **positive-words**: Contain 2,006 positive words used for sentiment analysis.
+- **negative-words**: Contain 4,783 negative words used for sentiment analysis.
+- **challenge_data.txt**: Containing 5,868 reviews (one review per line). Use for tesing best text classification model to predict if each review is either positive or negative.
 
 #### Models/
 
