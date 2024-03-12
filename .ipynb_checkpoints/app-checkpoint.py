@@ -1,9 +1,7 @@
 # Import some required libraries
 import pandas as pd
-import numpy as np
 import re
 import math
-from collections import Counter
 import contractions
 from nrclex import NRCLex
 from textblob import TextBlob
@@ -14,7 +12,7 @@ import spacy
 nlp = spacy.load('en_core_web_sm')
 
 import streamlit as st
-=from scipy.sparse import csr_matrix, hstack
+from scipy.sparse import csr_matrix, hstack
 import joblib
 
 # Load necessary objects
