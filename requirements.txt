@@ -5,4 +5,6 @@
  scipy
  spacy
  joblib
- en_core_web_sm
+
+# SpaCy English language model
+ en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.1.0/en_core_web_sm-3.1.0.tar.gz
