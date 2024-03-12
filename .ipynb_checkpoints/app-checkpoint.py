@@ -1,4 +1,3 @@
-!conda install contractions
 # Import some required libraries
 import pandas as pd
 import numpy as np
@@ -22,14 +21,15 @@ from scipy.sparse import csr_matrix, hstack
 import joblib
 
 # Load necessary objects
-scaler = joblib.load('scaler.pkl')
-tfidf_vectorizer = joblib.load('tfidf_vectorizer.pkl')
+scaler = joblib.load('Models/scaler.pkl')
+tfidf_vectorizer = joblib.load('Models/tfidf_vectorizer.pkl')
 numerical_columns = ['count_positive_words', 'count_negative_words', 'contain_no', 'contain_not',
                      'contain_exclamation', 'log_review_length', 'emotion_label', 'sentiment_score']
 
 # Load the SVM classifier
-svm_classifier = joblib.load('best_model.pkl')  # Load your trained SVM model
+svm_classifier = joblib.load('Models/best_model.pkl')  
 
+# Define function for text preprocessing
 def text_preprocessing(text):
     # Remove extra spaces
     text = re.sub(r'\s+', ' ', text)
@@ -64,6 +64,7 @@ def text_preprocessing(text):
 
     return cleaned_text
 
+# Define function for count positive words
 def count_positive_words(cleaned_review_text):
     positive_words = set()
     with open('Datasets/positive-words.txt', 'r', encoding='latin-1') as f:
@@ -72,6 +73,7 @@ def count_positive_words(cleaned_review_text):
     count = sum(1 for word in words if word in positive_words)
     return count
 
+# Define function for count negative words
 def count_negative_words(cleaned_review_text):
     negative_words = set()
     with open('Datasets/negative-words.txt', 'r', encoding='latin-1') as f:
@@ -80,21 +82,25 @@ def count_negative_words(cleaned_review_text):
     count = sum(1 for word in words if word in negative_words)
     return count
 
+# Define function for check if contain 'no'
 def contain_no(cleaned_review_text):
     tokens = cleaned_review_text.split()
     contain_no = int('no' in tokens)
     return contain_no
 
+# Define function for check if contain 'not'
 def contain_not(cleaned_review_text):
     tokens = cleaned_review_text.split()
     contain_not = int('not' in tokens)
     return contain_not
 
+# Define function for check if contain '!'
 def contain_exclamation(cleaned_review_text):
     tokens = cleaned_review_text.split()
     contain_exclamation = int('!' in tokens)
     return contain_exclamation
 
+# Define function for calculate log(review_text_length)
 def log_review_length(review_text):
     review_length = len(review_text)
     if review_length == 0:
@@ -102,6 +108,7 @@ def log_review_length(review_text):
     log_length = math.log(review_length)
     return log_length
 
+# Define function for getting emotion label
 def get_emotion_label(phrase):
     # Tokenize the phrase
     tokens = phrase.split()
@@ -133,7 +140,8 @@ def get_emotion_label(phrase):
         return 0
     else:
         return 2
-
+        
+# Define function for sentiment score calculation
 def calculate_sentiment_score(phrase):
     # Create a TextBlob object
     blob = TextBlob(phrase)
