@@ -4,7 +4,7 @@
  nrclex
  textblob
  scipy
- spacy
+ spacy==3.0.0
  joblib
 
 # SpaCy English language model
