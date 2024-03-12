@@ -1,8 +1,9 @@
 
 # Add dependencies
+ nltk
  contractions
  nrclex
- textblob
+ textblob==0.15.3
  scipy
  joblib
  scikit-learn
