@@ -5,6 +5,10 @@ import math
 import contractions
 from nrclex import NRCLex
 from textblob import TextBlob
+import nltk
+
+# Download the necessary corpus data
+nltk.download('punkt')
 
 # Spacy
 import spacy
