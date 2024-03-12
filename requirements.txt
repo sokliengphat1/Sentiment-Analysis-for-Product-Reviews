@@ -3,5 +3,5 @@ nrclex
 textblob
 scipy
 spacy
-streamlit
 joblib
+en_core_web_sm
