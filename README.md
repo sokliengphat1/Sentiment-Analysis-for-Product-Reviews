@@ -47,6 +47,7 @@ To run the code in this project, you will need the following libraries:
 Additionally, if you're using spaCy, you'll need to download the English language model:
 - python -m spacy download en_core_web_sm
 
+🚀 **Test the Streamlit app [here](https://sentiment-analysis-for-appuct-reviews-9ysxxd4btrqvzvx5zuv8ya.streamlit.app/)** 🌟
 
 
 
