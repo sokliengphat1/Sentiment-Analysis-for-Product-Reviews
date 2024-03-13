@@ -51,6 +51,6 @@ Additionally, if you're using spaCy, you'll need to download the English languag
 or run command 
 - streamlit run app.py
 
-![alt text](image.png) 
+![alt text](Images/image.png) 
 
-&nbsp;&nbsp;&nbsp;&nbsp;![alt text](image-1.png)
+&nbsp;&nbsp;&nbsp;&nbsp;![alt text](Images/image-1.png)
